@@ -23,6 +23,9 @@ detectors = {
         }
 
 file_extension = file_to_run.split('.')[-1]
+if not file_extension in detectors.keys():
+    print('Cannot find a runner for extension')
+    exit()
 runner = detectors[file_extension]
 runner(file_to_run)
 
